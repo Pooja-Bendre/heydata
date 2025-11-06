@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>heydata - AI Data Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>heydata</h1>
+      <p class="tagline">Unlock insights, trends, and solutions from your data in seconds.</p>
+    </div>
+    
+    <div class="main-flex">
+      <div class="left-panel">
+        <div class="upload-card">
+          <h2>📊 Upload Data</h2>
+          <form id="uploadForm">
+            <div class="file-upload-area" id="fileUploadArea"> <!-- keep as is -->
+              <input type="file" id="fileInput" accept=".csv,.json,.xml,.pdf" required />
+              <div class="upload-content">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">Drop your file here or click to browse</div>
+                <div class="upload-subtext">Supports CSV, JSON, XML, PDF files</div>
+              </div>
+            </div>
+            
+            <div class="file-info" id="fileInfo">
+              <h4>📁 Selected File:</h4>
+              <p id="fileName"></p>
+              <p id="fileSize"></p>
+              <p id="fileType"></p>
+            </div>
+            
+            <div class="analysis-options">
+              <h3>⚙️ Analysis Options</h3>
+              <div class="checkboxes">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="analysis" value="summary" checked />
+                  <span class="checkmark"></span>
+                  <span class="label-text">📈 Descriptive Summary</span>
+                </label>
+                
+                <label class="checkbox-label">
+                  <input type="checkbox" name="analysis" value="visuals" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">📊 Visualizations</span>
+                </label>
+                
+                <label class="checkbox-label">
+                  <input type="checkbox" name="analysis" value="correlation" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">🔗 Correlation Analysis</span>
+                </label>
+                
+                <label class="checkbox-label">
+                  <input type="checkbox" name="analysis" value="outliers" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">🎯 Outlier Detection</span>
+                </label>
+                
+                <label class="checkbox-label">
+                  <input type="checkbox" name="analysis" value="ai" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">🤖 AI Insights</span>
+                </label>
+              </div>
+            </div>
+            
+            <button type="submit" class="analyze-btn">
+              <span class="btn-text">Analyze Data</span>
+              <span class="btn-icon">🚀</span>
+            </button>
+          </form>
+          
+          <div id="error" class="error"></div>
+        </div>
+      </div>
+      
+      <div class="right-panel">
+        <div class="results-header">
+          <h2>Analysis Results</h2>
+          <p>Your comprehensive data insights will appear here</p>
+        </div>
+        
+        <div class="results-container">
+          <div id="results">
+            <div class="empty-state">
+              <div class="empty-icon">📊</div>
+              <h3>Ready to Analyze</h3>
+              <p>Upload a data file and select analysis options to get started with your data journey</p>
+            </div>
+          </div>
+        </div>
+        
+        <button id="downloadResults" class="download-btn">
+          <span>📥 Download Results</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
